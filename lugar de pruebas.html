@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASECONT YR</title>
+  <style>
+    /* Estilos globales */
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff; /* Fondo blanco para toda la página */
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    html {
+      scroll-padding-top: 70px;
+    }
+
+    /* NAVBAR */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0;
+      border-radius: 0;
+      background: none;
+    }
+
+    .menu-icon {
+      display: none;
+      width: 30px;
+      height: 20px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-icon span {
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background: #333;
+      border-radius: 2px;
+      left: 0;
+      transition: 0.3s ease;
+    }
+
+    .menu-icon span:nth-child(1) { top: 0; }
+    .menu-icon span:nth-child(2) { top: 8px; }
+    .menu-icon span:nth-child(3) { top: 16px; }
+
+    .menu-icon.open span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+    .menu-icon.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-icon.open span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 8px;
+    }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .hero-text h1 {
+      font-size: 40px;
+      color: #222;
+    }
+
+    .hero-text p {
+      margin: 15px 0;
+      font-size: 18px;
+      color: #555;
+    }
+
+    .hero-text button {
+      background: linear-gradient(to right, #5A3C92, #64B5F6);
+      border: none;
+      padding: 12px 25px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-img img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Scrolling Brands */
+    .brands {
+      background: linear-gradient(to right, #5A3C92, #64B5F6);
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 15px 0;
+      position: relative;
+      width: 100%;
+    }
+
+    .brands-track span {
+      flex: 0 0 auto;
+      padding: 0 50px;
+      font-size: 20px;
+      color: white;
+    }
+
+    .brands-track {
+      display: inline-flex;
+      animation: scroll 15s linear infinite;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Secciones */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    
+    .section-services {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .search-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .search-bar input {
+      padding: 12px;
+      width: 300px;
+      border: 2px solid #ccc;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .search-bar button {
+      background: linear-gradient(to right, #5A3C92, #64B5F6);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .content img {
+      width: 300px;
+      border-radius: 15px;
+    }
+
+    .features {
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .features h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .features h2 span {
+      color: #5A3C92;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+
+    .feature-item img {
+      width: 35px;
+      height: 35px;
+      margin-right: 15px;
+    }
+
+    .feature-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-text strong {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .feature-text p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .highlight {
+      background: #00aaff;
+      color: white;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    /* ESTILOS DE LA SECCIÓN (LO QUE HACEMOS) */
+    .landing-section {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #5A3C92, #64B5F6);
+      color: white;
+      padding: 40px 15px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .landing-section .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+      box-sizing: border-box;
+    }
+
+    .landing-section .section-title {
+      font-size: 1.8rem; /* Título "Lo Que Hacemos" más pequeño */
+      margin-bottom: 8px;
+    }
+
+    .landing-section .section-subtitle {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .services {  
+      display: flex;  
+      flex-direction: column;  
+      justify-content: center;  
+      align-items: center;  
+      gap: 15px;
+      max-width: 800px;
+      margin: 0 auto;
+    }  
+
+    .service-box {  
+      background: rgba(255, 255, 255, 0.1);  
+      border-radius: 10px;  
+      padding: 20px;
+      width: 100%;  
+      max-width: 300px;
+      transition: transform 0.3s ease, background 0.3s ease;  
+      text-align: center;  
+      font-size: 1rem;
+      box-sizing: border-box;
+    }  
+
+    @media (min-width: 768px) {
+      .services {  
+        flex-direction: row;  
+        flex-wrap: wrap;
+        justify-content: center;
+      }  
+      .service-box {  
+        flex: 1 1 calc(33% - 30px);
+        max-width: 300px;
+      }  
+    }
+
+    .service-box:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .service-box h3 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Seccion "Pide Asesoría" */
+    .landing-instructor {
+      background: #fceefd;
+      padding: 50px 10%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .landing-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .landing-left {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .landing-left h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .landing-left h1 span {
+      color: #5A3C92;
+    }
+
+    .landing-left p {
+      font-size: 15px;
+      margin-bottom: 20px;
+      color: #444;
+    }
+
+    .landing-perks {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+
+    .landing-perks li {
+      list-style: none;
+      font-size: 14px;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .landing-perks li::before {
+      content: "•";
+      color: #5A3C92;
+      position: absolute;
+      left: 0;
+    }
+
+    .landing-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(to right, #5A3C92, #64B5F6);
+      color: #fff;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .landing-btn:hover {
+      background: #e23d8a;
+    }
+
+    .landing-right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 280px;
+    }
+
+    .landing-right img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border: none;
+      border-radius: 0;
+    }
+
+    /* ESTILOS DEL FORMULARIO */
+    .form-container {
+      background: linear-gradient(135deg, #5A3C92, #64B5F6);
+      padding: 30px;
+      border-radius: 20px;
+      width: 320px;
+      margin: 40px auto; /* Centrar y agregar espacio */
+      color: #fff;
+      animation: float 6s ease-in-out infinite;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-15px) rotate(1deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .input-group input, 
+    .input-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+    }
+    .input-group label {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      transition: 0.3s;
+      pointer-events: none;
+    }
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label,
+    .input-group textarea:focus + label,
+    .input-group textarea:not(:placeholder-shown) + label {
+      top: -8px;
+      left: 10px;
+      font-size: 12px;
+      color: #fff;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      background: #fff;
+      color: #5A3C92;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .form-container button:hover {
+      background: #f0f0f0;
+      transform: scale(1.05);
+    }
+    
+    /* ESTILOS DEL CARRUSEL DE TESTIMONIOS */
+    .testimonials-section {
+      background: linear-gradient(135deg, #5A3C92, #64B5F6);
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .testimonials-section h2 {
+      font-size: 2.2rem; /* Tamaño más pequeño para el título */
+      margin-bottom: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .testimonials-section h2 {
+        font-size: 1.8rem; /* Tamaño más pequeño para el título en móvil */
+      }
+    }
+
+    .testimonials-section p {
+      font-size: 1rem; /* Tamaño más pequeño para el subtítulo */
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 20px;
+    }
+
+    .testimonial-cards-wrapper {
+      position: relative;
+      max-width: 100%;
+      margin: 0 auto;
+      height: 250px; /* Altura fija para el carrusel */
+    }
+
+    .testimonial-card {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: left;
+      color: white;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      will-change: opacity;
+    }
+
+    .testimonial-card.active {
+      opacity: 1;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .testimonial-header img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+
+    .testimonial-header .name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .testimonial-header .title {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin: 2px 0 0;
+    }
+
+    .testimonial-card .quote {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        padding: 15px;
+        border-radius: 8px 0 0 8px;
+        box-shadow: -2px 0 6px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      nav a {
+        background: none;
+        color: #333;
+        padding: 8px 0;
+      }
+
+      nav.show {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .hero-text h1 {
+        font-size: 24px;
+      }
+
+      .hero-text p {
+        font-size: 16px;
+      }
+
+      .content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .features {
+        text-align: center;
+      }
+
+      .feature-item {
+        justify-content: center;
+        text-align: left;
+      }
+
+      .landing-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .landing-perks {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-right img {
+        margin-top: 25px;
+      }
+      .landing-section .section-title {
+        font-size: 1.6rem; /* Título "Lo Que Hacemos" más pequeño en móvil */
+      }
+      .landing-instructor h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">ASECONT YR</div>
+    <div class="menu-icon" onclick="toggleMenu()" id="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="menu">
+      <a href="#services-section">Servicios</a>
+      <a href="#about-section">Acerca</a>
+      <a href="#hire-section">Pedir Asesoría</a>
+      <a href="#testimonials">Testimonios</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Asesoría Contable y Tributaria para tu Negocio</h1>
+      <p>Optimiza tus finanzas y cumple con todas tus obligaciones legales de la mano de expertos en contabilidad y tributos.</p>
+      <button onclick="window.location.href = 'https://wa.me/573147755480?text=Hola, me interesa la asesoría contable y quisiera más información.'">Contáctanos Ahora</button>
+    </div>
+    <div class="hero-img">
+      <img src="https://i.ibb.co/HDwvXPHM/1758076404328.png" alt="Contadora profesional">
+    </div>
+  </section>
+
+  <div class="brands">
+    <div class="brands-track">
+      <span>Asesoría</span>
+      <span>Tributaria</span>
+      <span>Contable</span>
+      <span>Creación de empresa</span>
+      <span>Exógena</span>
+      <span>Asesoría</span>
+      <span>Tributaria</span>
+      <span>Contable</span>
+      <span>Creación de empresa</span>
+      <span>Exógena</span>
+    </div>
+  </div>
+  
+  <section id="services-section" class="section-services">
+    <h1>Nuestros Servicios</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar servicios...">
+      <button onclick="search()">Buscar</button>
+    </div>
+
+    <div class="content">
+      <img src="https://i.ibb.co/603gj2b0/1758076777516.png" alt="Profesionales trabajando">
+
+      <div class="features" id="results">
+        <h2><span>Nuestros</span> Servicios Disponibles</h2>
+        <div class="feature-item">
+          <img src="https://i.ibb.co/xSrNL4jZ/391-sin-t-tulo-20250917100706.png" alt="Icono de Finanzas">
+          <div class="feature-text">
+            <strong>Asesoría Contable</strong>
+            <p>Asesoramiento especializado en contabilidad para optimizar tus finanzas.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="https://i.ibb.co/q3PBzJM5/file-00000000b5c061f78088f0dc81df4ff7.png" alt="Icono de Exógena">
+          <div class="feature-text">
+            <strong>Presentación de Información Exógena</strong>
+            <p>Te ayudamos con la entrega correcta y oportuna de información tributaria.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="https://i.ibb.co/xSQRJZHC/391-sin-t-tulo-20250917101424.png" alt="Icono de Renta">
+          <div class="feature-text">
+            <strong>Declaración de Renta</strong>
+            <p>Declaración de impuestos anual para personas y empresas sin errores.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="https://i.ibb.co/bgvCYg5t/1758121301930.png" alt="Icono de Facturación">
+          <div class="feature-text">
+            <strong>Facturación Electrónica</strong>
+            <p>Implementación de facturación digital cumpliendo la normatividad vigente.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <img src="https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png" alt="Icono de Impuestos">
+          <div class="feature-text">
+            <strong>Revisión de Impuestos</strong>
+            <p>Verificación detallada de obligaciones tributarias para mayor tranquilidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-section" class="landing-section">
+    <div class="container">
+      <h2 class="section-title">Lo Que Hacemos</h2>
+      <p class="section-subtitle">
+        Ofrecemos servicios de asesoría contable y tributaria adaptados a tus necesidades.
+      </p>
+      <div class="services">
+        <div class="service-box">
+          <h3>Asesoría Contable</h3>
+          <p>
+            Mantenemos tus libros contables al día y garantizamos el cumplimiento de las normativas.
+          </p>
+        </div>
+        <div class="service-box">
+          <h3>Asesoría Tributaria</h3>
+          <p>
+            Te orientamos para que optimices tus impuestos y evites sanciones.
+          </p>
+        </div>
+        <div class="service-box">
+          <h3>Creación de Empresa</h3>
+          <p>
+            Te guiamos en todo el proceso de constitución legal y tributaria de tu nuevo negocio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="hire-section" class="landing-instructor">
+    <div class="landing-container">
+      <div class="landing-left">
+        <h1>
+          Obtén una asesoría profesional<br>
+          <span>Pide Asesoría</span>
+        </h1>
+        <p>
+          Nuestros expertos te ayudarán a llevar la contabilidad de tu negocio de forma clara y eficiente, permitiéndote enfocarte en lo que realmente importa: el crecimiento de tu empresa.
+        </p>
+        <ul class="landing-perks">
+          <li>Experiencia Comprobada</li>
+          <li>Atención Personalizada</li>
+          <li>Soluciones a Medida</li>
+          <li>Precios Competitivos</li>
+          <li>Cumplimiento Normativo</li>
+          <li>Confidencialidad Total</li>
+          <li>Soporte Continuo</li>
+        </ul>
+        <a href="https://wa.me/573147755480?text=Hola, me interesa la asesoría y quisiera más información." class="landing-btn" target="_blank">Pedir Asesoría</a>
+      </div>
+
+      <div class="landing-right">
+        <img src="https://i.ibb.co/MyHVLfMw/1758077010450.png" alt="Asesora contable">
+      </div>
+    </div>
+  </section>
+  
+  <div class="form-container">
+    <h2>Solicita tu Asesoría</h2>
+    <form id="contact-form">
+      <div class="input-group">
+        <input type="text" id="nombre" name="nombre" placeholder=" " required>
+        <label for="nombre">Nombre</label>
+      </div>
+      <div class="input-group">
+        <input type="email" id="correo" name="correo" placeholder=" " required>
+        <label for="correo">Correo (Gmail/Hotmail)</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="telefono" name="telefono" placeholder=" " 
+               required pattern="[0-9]{10}" maxlength="10">
+        <label for="telefono">Teléfono/Whatsapp (10 dígitos)</label>
+      </div>
+      <div class="input-group">
+        <input type="text" id="ciudad" name="ciudad" placeholder=" " required>
+        <label for="ciudad">Ciudad</label>
+      </div>
+      <div class="input-group">
+        <textarea id="mensaje" name="mensaje" placeholder=" " rows="3" required></textarea>
+        <label for="mensaje">Mensaje</label>
+      </div>
+      <button type="submit">Enviar a WhatsApp</button>
+    </form>
+  </div>
+
+  <section id="testimonials" class="testimonials-section">
+    <h2>Testimonios de Clientes</h2>
+    <p>Lee lo que nuestros clientes tienen que decir sobre su experiencia. Descubre de primera mano el impacto que nuestros servicios han tenido en su negocio.</p>
+    
+    <div class="testimonial-cards-wrapper">
+      <div id="testimonial-container">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const services = [
+      {
+        name: "Asesoría Contable",
+        desc: "Asesoramiento especializado en contabilidad para optimizar tus finanzas.",
+        icon: "https://i.ibb.co/xSrNL4jZ/391-sin-t-tulo-20250917100706.png"
+      },
+      {
+        name: "Presentación de Información Exógena",
+        desc: "Te ayudamos con la entrega correcta y oportuna de información tributaria.",
+        icon: "https://i.ibb.co/q3PBzJM5/file-00000000b5c061f78088f0dc81df4ff7.png"
+      },
+      {
+        name: "Declaración de Renta",
+        desc: "Declaración de impuestos anual para personas y empresas sin errores.",
+        icon: "https://i.ibb.co/xSQRJZHC/391-sin-t-tulo-20250917101424.png"
+      },
+      {
+        name: "Facturación Electrónica",
+        desc: "Implementación de facturación digital cumpliendo la normatividad vigente.",
+        icon: "https://i.ibb.co/bgvCYg5t/1758121301930.png"
+      },
+      {
+        name: "Revisión de Impuestos",
+        desc: "Verificación detallada de obligaciones tributarias para mayor tranquilidad.",
+        icon: "https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png"
+      },
+      {
+        name: "Creación de Empresa",
+        desc: "Te guiamos en todo el proceso de constitución legal y tributaria de tu nuevo negocio.",
+        icon: "https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png"
+      },
+      {
+        name: "Asesoría Tributaria",
+        desc: "Te orientamos para que optimices tus impuestos y evites sanciones.",
+        icon: "https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png"
+      }
+    ];
+
+    function search() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const resultsDiv = document.getElementById("results");
+
+      let html = `<h2><span>Nuestros</span> Servicios Disponibles</h2>`;
+
+      const filtered = services.filter(s => s.name.toLowerCase().includes(input));
+
+      if (filtered.length === 0) {
+        html += "<p>No se encontraron resultados</p>";
+      } else {
+        filtered.forEach(s => {
+          let highlightedName = s.name.replace(
+            new RegExp(input, "gi"),
+            match => `<span class="highlight">${match}</span>`
+          );
+
+          html += `
+            <div class="feature-item">
+              <img src="${s.icon}" alt="icono">
+              <div class="feature-text">
+                <strong>${highlightedName}</strong>
+                <p>${s.desc}</p>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      resultsDiv.innerHTML = html;
+    }
+
+    document.getElementById("searchInput").addEventListener("input", search);
+
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    function toggleMenu() {
+      menu.classList.toggle("show");
+      menuBtn.classList.toggle("open");
+    }
+
+    function closeMenu() {
+      menu.classList.remove("show");
+      menuBtn.classList.remove("open");
+    }
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        const headerOffset = 70;
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+
+        closeMenu();
+      });
+    });
+
+    // CÓDIGO DEL FORMULARIO A WHATSAPP
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const ciudad = document.getElementById("ciudad").value.trim();
+      const mensaje = document.getElementById("mensaje").value.trim();
+
+      if (!nombre || !correo || !telefono || !ciudad || !mensaje) {
+        alert("Por favor, completa todos los campos antes de enviar.");
+        return;
+      }
+
+      if (!/^\d{10}$/.test(telefono)) {
+        alert("El teléfono debe tener exactamente 10 dígitos numéricos.");
+        return;
+      }
+
+      const numero = "573147755480"; // Número de WhatsApp en formato internacional con código de país
+      const texto = `Hola, me interesa la asesoría y quisiera más información.\n\n👤 Nombre: ${nombre}\n📧 Correo: ${correo}\n📱 Teléfono: ${telefono}\n🏙️ Ciudad: ${ciudad}\n💬 Mensaje: ${mensaje}`;
+
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+      
+      const newWindow = window.open(url, '_blank');
+      
+      if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+        window.location.href = url;
+      }
+    });
+
+    // Código del carrusel de testimonios
+    const testimonials = [
+      {
+        name: "Ana Gómez",
+        title: "Emprendedora",
+        quote: "El servicio de asesoría contable fue impecable. Profesionalismo y eficiencia en cada paso. Nos ayudó a optimizar nuestros impuestos de manera significativa.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "Luis Torres",
+        title: "Gerente de Finanzas",
+        quote: "La consultoría estratégica que nos brindaron fue crucial para la expansión. Su equipo es de primera y su conocimiento del mercado, inigualable.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "María Fernández",
+        title: "Abogada Tributaria",
+        quote: "La presentación de nuestra información exógena se manejó con total precisión. Es un alivio trabajar con expertos que entienden la normativa a la perfección.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "Carlos Ruiz",
+        title: "Consultor de Negocios",
+        quote: "Gracias a su revisión de impuestos, encontramos errores que nos costaban miles. Su servicio es una inversión que vale cada centavo.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "Sofía Vargas",
+        title: "Directora de Operaciones",
+        quote: "La implementación de la facturación electrónica fue rápida y sin problemas. El soporte técnico es excelente y siempre están disponibles para ayudar.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "Juan Salazar",
+        title: "Emprendedor",
+        quote: "Iniciar mi empresa fue fácil con su guía. La asesoría de creación de empresa es completa y te da la confianza para arrancar tu proyecto.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "Elena Castro",
+        title: "Especialista en Impuestos",
+        quote: "La claridad y la transparencia en la declaración de renta fueron impresionantes. Hicieron un proceso complejo parecer sencillo y sin estrés.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "David Morales",
+        title: "Jefe de Contabilidad",
+        quote: "El equipo de ASECONT es un verdadero socio. Su asesoría contable nos ha permitido enfocarnos en el crecimiento del negocio.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "Laura Mendoza",
+        title: "Gerente de RRHH",
+        quote: "Con su ayuda, nos aseguramos de cumplir con todas las normativas tributarias. Es un servicio indispensable para cualquier empresa.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      },
+      {
+        name: "Pedro López",
+        title: "CEO de Startup",
+        quote: "Desde la exógena hasta la revisión de impuestos, confío plenamente en su experiencia. Su trabajo es de la más alta calidad y muy confiable.",
+        img: "https://i.ibb.co/C074c52/avatar-male.png"
+      }
+    ];
+
+    const container = document.getElementById('testimonial-container');
+    let currentTestimonialIndex = 0;
+
+    function createTestimonialCards() {
+      container.innerHTML = '';
+      testimonials.forEach((testimonial, index) => {
+        const card = document.createElement('div');
+        card.classList.add('testimonial-card');
+        if (index === 0) {
+          card.classList.add('active');
+        }
+        card.innerHTML = `
+          <div class="testimonial-header">
+            <img src="${testimonial.img}" alt="${testimonial.name}">
+            <div>
+              <p class="name">${testimonial.name}</p>
+              <p class="title">${testimonial.title}</p>
+            </div>
+          </div>
+          <p class="quote">"${testimonial.quote}"</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function showNextTestimonial() {
+      const currentCard = container.querySelector('.testimonial-card.active');
+      if (currentCard) {
+        currentCard.classList.remove('active');
+      }
+
+      currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonials.length;
+      
+      const nextCard = container.querySelectorAll('.testimonial-card')[currentTestimonialIndex];
+      if (nextCard) {
+        nextCard.classList.add('active');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      createTestimonialCards();
+      setInterval(showNextTestimonial, 5000);
+    });
+
+  </script>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Animado</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Línea animada arriba del footer */
+    .footer-divider {
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(270deg, #ff6b6b, #f8e473, #4ecdc4, #5e60ce);
+      background-size: 600% 600%;
+      animation: gradientMove 8s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Footer base */
+    footer {
+      background: #fff;
+      color: #333;
+      padding: 15px 30px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr; /* izquierda - centro - derecha */
+      align-items: center;
+      border-top: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    /* Izquierda */
+    .footer-left {
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    .footer-left h4 {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .footer-left p {
+      margin: 3px 0 0;
+      font-size: 13px;
+    }
+
+    /* Centro (redes sociales) */
+    .footer-center {
+      display: flex;
+      justify-content: flex-start; 
+      gap: 25px;
+      padding-left: 30px; /* 📌 un poco hacia la derecha en TODAS las pantallas */
+    }
+
+    .footer-center a {
+      color: #333;
+      font-size: 28px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .footer-center a:hover {
+      transform: scale(1.3);
+      color: #5e60ce;
+    }
+
+    /* Derecha */
+    .footer-right {
+      text-align: right;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    /* Ajustes para pantallas grandes (PC) */
+    @media (min-width: 992px) {
+      footer {
+        font-size: 16px;
+        padding: 20px 60px;
+      }
+
+      .footer-left h4 {
+        font-size: 16px;
+      }
+
+      .footer-left p {
+        font-size: 14px;
+      }
+
+      .footer-center {
+        gap: 40px; 
+        padding-left: 100px; /* 📌 más hacia la derecha en PC */
+      }
+
+      .footer-center a {
+        font-size: 100px; /* 📌 íconos más grandes en PC */
+      }
+
+      .footer-right {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="footer-divider"></div>
+  <footer>
+    <div class="footer-left">
+      <h4>Yenny Romero Fiallo</h4>
+      <p>+57 314 7755480</p>
+    </div>
+
+    <div class="footer-center">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/asecontyr?igsh=MTliYWcxMTFidGJ3Ng==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/573147755480" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <div class="footer-right">
+      <span>© <span id="year"></span></span>
+    </div>
+  </footer>
+
+  <script>
+    // Año automático
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
