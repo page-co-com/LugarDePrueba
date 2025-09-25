@@ -45,6 +45,9 @@
       font-size: 20px;
       font-weight: bold;
       color: #333;
+      /* Nuevos estilos para el logo */
+      color: #00bcd4; /* Color agua */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra */
     }
 
     nav {
@@ -235,6 +238,7 @@
       display: flex;
       align-items: flex-start;
       margin-bottom: 15px;
+      cursor: pointer; /* Agregado para indicar que es un enlace */
     }
 
     .feature-item img {
@@ -315,6 +319,7 @@
       text-align: center;  
       font-size: 1rem;
       box-sizing: border-box;
+      cursor: pointer; /* Agregado para indicar que es un enlace */
     }  
 
     @media (min-width: 768px) {
@@ -673,7 +678,7 @@
 <body>
 
   <header>
-    <div class="logo">ASECONT YR</div>
+    <div class="logo">ASECONTYR</div>
     <div class="menu-icon" onclick="toggleMenu()" id="menu-btn">
       <span></span>
       <span></span>
@@ -682,16 +687,16 @@
     <nav id="menu">
       <a href="#services-section">Servicios</a>
       <a href="#about-section">Acerca</a>
-      <a href="#hire-section">Pedir Asesoría</a>
+      <a href="#hire-section">Pedir Asesoria</a>
       <a href="#testimonials">Testimonios</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-text">
-      <h1>Asesoría Contable y Tributaria para tu Negocio</h1>
+      <h1>Asesoria Contable y Tributaria para tu Negocio</h1>
       <p>Optimiza tus finanzas y cumple con todas tus obligaciones legales de la mano de expertos en contabilidad y tributos.</p>
-      <button onclick="window.location.href = 'https://wa.me/573147755480?text=Hola, me interesa la asesoría contable y quisiera más información.'">Contáctanos Ahora</button>
+      <button onclick="window.location.href = 'https://wa.me/573147755480?text=Hola, me interesa la asesoria contable y quisiera mas informacion.'">Contactanos Ahora</button>
     </div>
     <div class="hero-img">
       <img src="https://i.ibb.co/HDwvXPHM/1758076404328.png" alt="Contadora profesional">
@@ -700,16 +705,16 @@
 
   <div class="brands">
     <div class="brands-track">
-      <span>Asesoría</span>
+      <span>Asesoria</span>
       <span>Tributaria</span>
       <span>Contable</span>
-      <span>Creación de empresa</span>
-      <span>Exógena</span>
-      <span>Asesoría</span>
+      <span>Exogena</span>
+      <span>Declaracion de Renta</span>
+      <span>Asesoria</span>
       <span>Tributaria</span>
       <span>Contable</span>
-      <span>Creación de empresa</span>
-      <span>Exógena</span>
+      <span>Exogena</span>
+      <span>Declaracion de Renta</span>
     </div>
   </div>
   
@@ -725,45 +730,55 @@
 
       <div class="features" id="results">
         <h2><span>Nuestros</span> Servicios Disponibles</h2>
-        <div class="feature-item">
-          <img src="https://i.ibb.co/xSrNL4jZ/391-sin-t-tulo-20250917100706.png" alt="Icono de Finanzas">
+        
+        <div class="feature-item" onclick="sendWhatsAppMessage('Asesoria Contable')">
+          <img src="https://i.ibb.co/xSrNL4jZ/391-sin-t-tulo-20250917100706.png" alt="icono">
           <div class="feature-text">
-            <strong>Asesoría Contable</strong>
+            <strong>Asesoria Contable</strong>
             <p>Asesoramiento especializado en contabilidad para optimizar tus finanzas.</p>
           </div>
         </div>
-
-        <div class="feature-item">
-          <img src="https://i.ibb.co/q3PBzJM5/file-00000000b5c061f78088f0dc81df4ff7.png" alt="Icono de Exógena">
+        
+        <div class="feature-item" onclick="sendWhatsAppMessage('Presentacion de Informacion Exogena')">
+          <img src="https://i.ibb.co/q3PBzJM5/file-00000000b5c061f78088f0dc81df4ff7.png" alt="icono">
           <div class="feature-text">
-            <strong>Presentación de Información Exógena</strong>
-            <p>Te ayudamos con la entrega correcta y oportuna de información tributaria.</p>
+            <strong>Presentacion de Informacion Exogena</strong>
+            <p>Te ayudamos con la entrega correcta y oportuna de informacion tributaria.</p>
           </div>
         </div>
-
-        <div class="feature-item">
-          <img src="https://i.ibb.co/xSQRJZHC/391-sin-t-tulo-20250917101424.png" alt="Icono de Renta">
+        
+        <div class="feature-item" onclick="sendWhatsAppMessage('Declaracion de Renta')">
+          <img src="https://i.ibb.co/xSQRJZHC/391-sin-t-tulo-20250917101424.png" alt="icono">
           <div class="feature-text">
-            <strong>Declaración de Renta</strong>
-            <p>Declaración de impuestos anual para personas y empresas sin errores.</p>
+            <strong>Declaracion de Renta</strong>
+            <p>Declaracion de impuestos anual para personas y empresas sin errores.</p>
           </div>
         </div>
-
-        <div class="feature-item">
-          <img src="https://i.ibb.co/bgvCYg5t/1758121301930.png" alt="Icono de Facturación">
+        
+        <div class="feature-item" onclick="sendWhatsAppMessage('Facturacion Electronica')">
+          <img src="https://i.ibb.co/bgvCYg5t/1758121301930.png" alt="icono">
           <div class="feature-text">
-            <strong>Facturación Electrónica</strong>
-            <p>Implementación de facturación digital cumpliendo la normatividad vigente.</p>
+            <strong>Facturacion Electronica</strong>
+            <p>Implementacion de facturacion digital cumpliendo la normatividad vigente.</p>
           </div>
         </div>
-
-        <div class="feature-item">
-          <img src="https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png" alt="Icono de Impuestos">
+        
+        <div class="feature-item" onclick="sendWhatsAppMessage('Revision de Impuestos')">
+          <img src="https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png" alt="icono">
           <div class="feature-text">
-            <strong>Revisión de Impuestos</strong>
-            <p>Verificación detallada de obligaciones tributarias para mayor tranquilidad.</p>
+            <strong>Revision de Impuestos</strong>
+            <p>Verificacion detallada de obligaciones tributarias para mayor tranquilidad.</p>
           </div>
         </div>
+        
+        <div class="feature-item" onclick="sendWhatsAppMessage('Asesoria Tributaria')">
+          <img src="https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png" alt="icono">
+          <div class="feature-text">
+            <strong>Asesoria Tributaria</strong>
+            <p>Te orientamos para que optimices tus impuestos y evites sanciones.</p>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
@@ -772,27 +787,22 @@
     <div class="container">
       <h2 class="section-title">Lo Que Hacemos</h2>
       <p class="section-subtitle">
-        Ofrecemos servicios de asesoría contable y tributaria adaptados a tus necesidades.
+        Ofrecemos servicios de asesoria contable y tributaria adaptados a tus necesidades.
       </p>
       <div class="services">
-        <div class="service-box">
-          <h3>Asesoría Contable</h3>
+        <div class="service-box" onclick="sendWhatsAppMessage('Asesoria Contable')">
+          <h3>Asesoria Contable</h3>
           <p>
-            Mantenemos tus libros contables al día y garantizamos el cumplimiento de las normativas.
+            Mantenemos tus libros contables al dia y garantizamos el cumplimiento de las normativas.
           </p>
         </div>
-        <div class="service-box">
-          <h3>Asesoría Tributaria</h3>
+        <div class="service-box" onclick="sendWhatsAppMessage('Asesoria Tributaria')">
+          <h3>Asesoria Tributaria</h3>
           <p>
             Te orientamos para que optimices tus impuestos y evites sanciones.
           </p>
         </div>
-        <div class="service-box">
-          <h3>Creación de Empresa</h3>
-          <p>
-            Te guiamos en todo el proceso de constitución legal y tributaria de tu nuevo negocio.
-          </p>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -801,22 +811,22 @@
     <div class="landing-container">
       <div class="landing-left">
         <h1>
-          Obtén una asesoría profesional<br>
-          <span>Pide Asesoría</span>
+          Obten una asesoria profesional<br>
+          <span>Pide Asesoria</span>
         </h1>
         <p>
-          Nuestros expertos te ayudarán a llevar la contabilidad de tu negocio de forma clara y eficiente, permitiéndote enfocarte en lo que realmente importa: el crecimiento de tu empresa.
+          Nuestros expertos te ayudaran a llevar la contabilidad de tu negocio de forma clara y eficiente, permitiendote enfocarte en lo que realmente importa: el crecimiento de tu empresa.
         </p>
         <ul class="landing-perks">
           <li>Experiencia Comprobada</li>
-          <li>Atención Personalizada</li>
+          <li>Atencion Personalizada</li>
           <li>Soluciones a Medida</li>
           <li>Precios Competitivos</li>
           <li>Cumplimiento Normativo</li>
           <li>Confidencialidad Total</li>
           <li>Soporte Continuo</li>
         </ul>
-        <a href="https://wa.me/573147755480?text=Hola, me interesa la asesoría y quisiera más información." class="landing-btn" target="_blank">Pedir Asesoría</a>
+        <a href="https://wa.me/573147755480?text=Hola, me interesa la asesoria y quisiera mas informacion." class="landing-btn" target="_blank">Pedir Asesoria</a>
       </div>
 
       <div class="landing-right">
@@ -826,7 +836,7 @@
   </section>
   
   <div class="form-container">
-    <h2>Solicita tu Asesoría</h2>
+    <h2>Solicita tu Asesoria</h2>
     <form id="contact-form">
       <div class="input-group">
         <input type="text" id="nombre" name="nombre" placeholder=" " required>
@@ -839,7 +849,7 @@
       <div class="input-group">
         <input type="text" id="telefono" name="telefono" placeholder=" " 
                required pattern="[0-9]{10}" maxlength="10">
-        <label for="telefono">Teléfono/Whatsapp (10 dígitos)</label>
+        <label for="telefono">Telefono/Whatsapp (10 digitos)</label>
       </div>
       <div class="input-group">
         <input type="text" id="ciudad" name="ciudad" placeholder=" " required>
@@ -864,77 +874,83 @@
   </section>
 
   <script>
+    // Nueva función para enviar mensaje a WhatsApp
+    function sendWhatsAppMessage(serviceName) {
+      const phoneNumber = "573147755480";
+      const message = `Me interesa la asesoria de ${serviceName}`;
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
     const services = [
       {
-        name: "Asesoría Contable",
+        name: "Asesoria Contable",
         desc: "Asesoramiento especializado en contabilidad para optimizar tus finanzas.",
         icon: "https://i.ibb.co/xSrNL4jZ/391-sin-t-tulo-20250917100706.png"
       },
       {
-        name: "Presentación de Información Exógena",
-        desc: "Te ayudamos con la entrega correcta y oportuna de información tributaria.",
+        name: "Presentacion de Informacion Exogena",
+        desc: "Te ayudamos con la entrega correcta y oportuna de informacion tributaria.",
         icon: "https://i.ibb.co/q3PBzJM5/file-00000000b5c061f78088f0dc81df4ff7.png"
       },
       {
-        name: "Declaración de Renta",
-        desc: "Declaración de impuestos anual para personas y empresas sin errores.",
+        name: "Declaracion de Renta",
+        desc: "Declaracion de impuestos anual para personas y empresas sin errores.",
         icon: "https://i.ibb.co/xSQRJZHC/391-sin-t-tulo-20250917101424.png"
       },
       {
-        name: "Facturación Electrónica",
-        desc: "Implementación de facturación digital cumpliendo la normatividad vigente.",
+        name: "Facturacion Electronica",
+        desc: "Implementacion de facturacion digital cumpliendo la normatividad vigente.",
         icon: "https://i.ibb.co/bgvCYg5t/1758121301930.png"
       },
       {
-        name: "Revisión de Impuestos",
-        desc: "Verificación detallada de obligaciones tributarias para mayor tranquilidad.",
+        name: "Revision de Impuestos",
+        desc: "Verificacion detallada de obligaciones tributarias para mayor tranquilidad.",
         icon: "https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png"
       },
       {
-        name: "Creación de Empresa",
-        desc: "Te guiamos en todo el proceso de constitución legal y tributaria de tu nuevo negocio.",
-        icon: "https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png"
-      },
-      {
-        name: "Asesoría Tributaria",
+        name: "Asesoria Tributaria",
         desc: "Te orientamos para que optimices tus impuestos y evites sanciones.",
         icon: "https://i.ibb.co/Mkb6G3bn/file-00000000bbc861f89382e9de887f197f.png"
       }
     ];
 
-    function search() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
+    function renderServices(filteredServices) {
       const resultsDiv = document.getElementById("results");
-
       let html = `<h2><span>Nuestros</span> Servicios Disponibles</h2>`;
 
-      const filtered = services.filter(s => s.name.toLowerCase().includes(input));
-
-      if (filtered.length === 0) {
+      if (filteredServices.length === 0) {
         html += "<p>No se encontraron resultados</p>";
       } else {
-        filtered.forEach(s => {
-          let highlightedName = s.name.replace(
-            new RegExp(input, "gi"),
-            match => `<span class="highlight">${match}</span>`
-          );
-
+        filteredServices.forEach(s => {
           html += `
-            <div class="feature-item">
+            <div class="feature-item" onclick="sendWhatsAppMessage('${s.name}')">
               <img src="${s.icon}" alt="icono">
               <div class="feature-text">
-                <strong>${highlightedName}</strong>
+                <strong>${s.name}</strong>
                 <p>${s.desc}</p>
               </div>
             </div>
           `;
         });
       }
-
       resultsDiv.innerHTML = html;
     }
 
+    function search() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      
+      const filtered = services.filter(s => s.name.toLowerCase().includes(input));
+      renderServices(filtered);
+    }
+
     document.getElementById("searchInput").addEventListener("input", search);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Renderiza todos los servicios al cargar la página
+      renderServices(services);
+    });
+
 
     const menuBtn = document.getElementById("menu-btn");
     const menu = document.getElementById("menu");
@@ -988,12 +1004,12 @@
       }
 
       if (!/^\d{10}$/.test(telefono)) {
-        alert("El teléfono debe tener exactamente 10 dígitos numéricos.");
+        alert("El telefono debe tener exactamente 10 digitos numericos.");
         return;
       }
 
-      const numero = "573147755480"; // Número de WhatsApp en formato internacional con código de país
-      const texto = `Hola, me interesa la asesoría y quisiera más información.\n\n👤 Nombre: ${nombre}\n📧 Correo: ${correo}\n📱 Teléfono: ${telefono}\n🏙️ Ciudad: ${ciudad}\n💬 Mensaje: ${mensaje}`;
+      const numero = "573147755480"; // Numero de WhatsApp en formato internacional con codigo de pais
+      const texto = `Hola, me interesa la asesoria y quisiera mas informacion.\n\n👤 Nombre: ${nombre}\n📧 Correo: ${correo}\n📱 Telefono: ${telefono}\n🏙️ Ciudad: ${ciudad}\n💬 Mensaje: ${mensaje}`;
 
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
       
@@ -1007,64 +1023,64 @@
     // Código del carrusel de testimonios
     const testimonials = [
       {
-        name: "Ana Gómez",
+        name: "Ana Gomez",
         title: "Emprendedora",
-        quote: "El servicio de asesoría contable fue impecable. Profesionalismo y eficiencia en cada paso. Nos ayudó a optimizar nuestros impuestos de manera significativa.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        quote: "El servicio de asesoria contable fue impecable. Profesionalismo y eficiencia en cada paso. Nos ayudo a optimizar nuestros impuestos de manera significativa.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
         name: "Luis Torres",
-        title: "Gerente de Finanzas",
-        quote: "La consultoría estratégica que nos brindaron fue crucial para la expansión. Su equipo es de primera y su conocimiento del mercado, inigualable.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        title: "Emprendedor",
+        quote: "La consultoria estrategica que nos brindaron fue crucial para la expansion. Su equipo es de primera y su conocimiento del mercado, inigualable.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
-        name: "María Fernández",
-        title: "Abogada Tributaria",
-        quote: "La presentación de nuestra información exógena se manejó con total precisión. Es un alivio trabajar con expertos que entienden la normativa a la perfección.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        name: "Maria Fernandez",
+        title: "Emprendedora",
+        quote: "La presentacion de nuestra informacion exogena se manejo con total precision. Es un alivio trabajar con expertos que entienden la normativa a la perfeccion.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
         name: "Carlos Ruiz",
-        title: "Consultor de Negocios",
-        quote: "Gracias a su revisión de impuestos, encontramos errores que nos costaban miles. Su servicio es una inversión que vale cada centavo.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        title: "Emprendedor",
+        quote: "Gracias a su revision de impuestos, encontramos errores que nos costaban miles. Su servicio es una inversion que vale cada centavo.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
-        name: "Sofía Vargas",
-        title: "Directora de Operaciones",
-        quote: "La implementación de la facturación electrónica fue rápida y sin problemas. El soporte técnico es excelente y siempre están disponibles para ayudar.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        name: "Sofia Vargas",
+        title: "Emprendedora",
+        quote: "La implementacion de la facturacion electronica fue rapida y sin problemas. El soporte tecnico es excelente y siempre estan disponibles para ayudar.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
         name: "Juan Salazar",
         title: "Emprendedor",
-        quote: "Iniciar mi empresa fue fácil con su guía. La asesoría de creación de empresa es completa y te da la confianza para arrancar tu proyecto.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        quote: "Iniciar mi empresa fue facil con su guia. La asesoria de creacion de empresa es completa y te da la confianza para arrancar tu proyecto.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
         name: "Elena Castro",
-        title: "Especialista en Impuestos",
-        quote: "La claridad y la transparencia en la declaración de renta fueron impresionantes. Hicieron un proceso complejo parecer sencillo y sin estrés.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        title: "Emprendedora",
+        quote: "La claridad y la transparencia en la declaracion de renta fueron impresionantes. Hicieron un proceso complejo parecer sencillo y sin estres.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
         name: "David Morales",
-        title: "Jefe de Contabilidad",
-        quote: "El equipo de ASECONT es un verdadero socio. Su asesoría contable nos ha permitido enfocarnos en el crecimiento del negocio.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        title: "Emprendedor",
+        quote: "El equipo de ASECONT es un verdadero socio. Su asesoria contable nos ha permitido enfocarnos en el crecimiento del negocio.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
         name: "Laura Mendoza",
-        title: "Gerente de RRHH",
+        title: "Emprendedora",
         quote: "Con su ayuda, nos aseguramos de cumplir con todas las normativas tributarias. Es un servicio indispensable para cualquier empresa.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       },
       {
-        name: "Pedro López",
-        title: "CEO de Startup",
-        quote: "Desde la exógena hasta la revisión de impuestos, confío plenamente en su experiencia. Su trabajo es de la más alta calidad y muy confiable.",
-        img: "https://i.ibb.co/C074c52/avatar-male.png"
+        name: "Pedro Lopez",
+        title: "Emprendedor",
+        quote: "Desde la exogena hasta la revision de impuestos, confio plenamente en su experiencia. Su trabajo es de la mas alta calidad y muy confiable.",
+        img: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
       }
     ];
 
