@@ -6,13 +6,10 @@
   <title>ACONTAYR</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* El color #623F5D se aplicará a los botones y enlaces del menú principal */
     :root {
-      --main-color: #623F5D; 
+      --main-color: #623F5D;
     }
 
     body {
@@ -28,13 +25,8 @@
       margin: auto;
       padding: 0 20px 20px;
     }
-    
-    .top-section-wrapper {
-        max-width: 500px;
-        margin: auto;
-    }
 
-    /* ESTILO PARA LOS BOTONES DE MENÚ Y ENCABEZADO */
+    /* --- BARRA SUPERIOR --- */
     .header {
       display: flex;
       justify-content: space-between;
@@ -42,9 +34,8 @@
       padding: 15px 20px;
     }
 
-    .header a,
     .header button {
-      background: var(--main-color); /* Color #623F5D aplicado */
+      background: var(--main-color);
       color: #fff;
       text-decoration: none;
       font-size: 14px;
@@ -56,7 +47,6 @@
       cursor: pointer;
     }
 
-    .header a:hover,
     .header button:hover {
       opacity: 0.9;
       transform: scale(1.05);
@@ -69,15 +59,14 @@
       object-fit: cover;
       margin-bottom: 15px;
     }
-    
-    /* ESTILO PARA EL NOMBRE DE JENNY ROMERO */
+
     .profile-name {
-        font-size: 24px;
-        font-weight: 700;
-        margin-bottom: 0px; 
-        color: #000;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: #000;
     }
-    
+
     h1 {
       font-size: 30px;
       font-weight: 700;
@@ -104,14 +93,13 @@
     }
 
     .socials a:hover {
-      color: var(--main-color); /* Color #623F5D aplicado */
+      color: var(--main-color);
       transform: scale(1.15);
     }
 
-    /* ESTILO PARA LOS BOTONES DE ENLACE PRINCIPALES */
     .btn {
       display: block;
-      background: var(--main-color); /* Color #623F5D aplicado */
+      background: var(--main-color);
       color: #fff;
       text-decoration: none;
       font-size: 18px;
@@ -136,90 +124,153 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-bottom: 20px; /* Agrego un poco de espacio abajo del video */
-      /* Contenedor del video para manejar el iframe de Instagram */
-      max-width: 100%; /* Asegura que no desborde */
-      overflow: hidden; /* Oculta partes que puedan salirse */
+      padding-bottom: 20px;
     }
-    
-    /* Estilo para el contenedor del video de Instagram Reel */
-    .instagram-embed-container {
-      position: relative;
-      /* Ajustar el tamaño del iframe de Instagram */
-      width: 100%; 
-      max-width: 450px; /* Ancho máximo para el embed de Instagram */
+
+    .tiktok-embed-container {
+      width: 100%;
+      max-width: 450px;
       margin: 0 auto;
     }
-
-    /* Estilos para el iframe de Instagram */
-    .instagram-embed-container iframe {
-      width: 100%;
-      height: 600px; /* Altura adecuada para un Reel/Post incrustado */
-      border: 0;
-      max-width: 100%;
-    }
-
 
     .footer {
       margin-top: 30px;
       font-size: 13px;
       opacity: 0.7;
     }
-    
-    /* NUEVO: Estilo para el enlace de Gmail en el footer */
+
     .footer-gmail-link {
-        color: blue; /* Texto azul */
-        text-decoration: none;
-        font-weight: 600;
-        margin-top: 5px;
-        display: block;
+      color: blue;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 5px;
+      display: block;
     }
-    
+
     .footer-gmail-link:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
 
-
-    /* Estilos para la sección de servicios (sin cambios importantes aquí) */
-    #services-section {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 0 0 20px 0;
-        text-align: left;
-        display: none;
-    }
-
-    .content-container-services {
-        max-width: 500px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .image-example-overlay {
-      width: 100%;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-      color: white; 
+    /* --- SECCIÓN SITIO WEB --- */
+    #sitio-web {
+      display: none;
       text-align: left;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
     }
 
-    .image-example-overlay h2 {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 0;
-      color: white; 
-    }
-
-    .image-example-overlay p {
+    /* --- BOTÓN SALIR --- */
+    #btn-regresar {
+      display: none;
+      position: absolute;
+      top: 80px;      /* más abajo */
+      left: 20px;     /* a la izquierda */
+      background: var(--main-color);
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
       font-size: 14px;
-      margin: 5px 0 0;
-      color: white; 
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s ease;
     }
-    
+
+    #btn-regresar:hover {
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- BARRA SUPERIOR -->
+  <div class="header">
+    <button onclick="window.open('https://wa.me/573147755480','_blank')"><i class="fab fa-whatsapp"></i> Pedir Asesoría</button>
+    <button onclick="sharePage()"><i class="fas fa-share-alt"></i> Compartir</button>
+  </div>
+
+  <!-- BOTÓN SALIR -->
+  <button id="btn-regresar" onclick="toggleSitioWeb()">Salir</button>
+
+  <div class="container" id="inicio">
+    <div class="profile">
+      <img src="https://i.ibb.co/m52R2wpp/1759955091520.png" alt="Perfil">
+      <div class="profile-name">Yenny Romero Fiallo</div>
+      <h1>ACONTAYR</h1>
+      <p>Asesoría Contable y Tributaria ¡Tu aliada empresarial! Finanzas simples y claras</p>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/acontayr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@yennyromerocontadora" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/573147755480" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
+    <a class="btn" href="https://www.instagram.com/acontayr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    <a class="btn" href="https://www.tiktok.com/@yennyromerocontadora" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a class="btn" href="https://wa.me/573147755480" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a class="btn" href="#" onclick="toggleSitioWeb()"><i class="fas fa-globe"></i> Sitio Web</a>
+
+    <div class="video">
+      <div class="tiktok-embed-container">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yennyromerocontadora/video/7557002962543971596" data-video-id="7557002962543971596" style="max-width: 450px; min-width: 325px;">
+          <section><a target="_blank" href="https://www.tiktok.com/@yennyromerocontadora">@yennyromerocontadora</a></section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </div>
+
+    <div class="footer">
+      © 2025 ACONTAYR - Todos los derechos reservados
+      <a href="mailto:servicios@asesoriatributariayr.com" class="footer-gmail-link">Contactar por Gmail</a>
+    </div>
+  </div>
+
+  <!-- SECCIÓN SITIO WEB -->
+  <div id="sitio-web">
+    <!-- Aquí va el contenido de tus servicios -->
+    <!DOCTYPE PostedDate="2024-06-25T11:47:00Z" html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios de Asesoría Contable, Exogena, Declaración de Renta, Facturación Electrónica y Revisión de Impuestos.">
+  <meta name="keywords" content="Asesoría Contable, Exogena, Declaración de Renta, Facturación Electrónica, Impuestos, Contabilidad">
+
+  <meta property="og:title" content="Servicios Contables y Tributarios" />
+  <meta property="og:description" content="Soluciones completas para su gestión contable y fiscal." />
+  <meta property="og:image" content="https://images.pexels.com/photos/6863260/pexels-photo-6863260.jpeg?_gl=1*igh9mu*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Servicios Contables y Tributarios">
+  <meta name="twitter:description" content="Soluciones para tus necesidades contables y fiscales.">
+  <meta name="twitter:image" content="https://images.pexels.com/photos/6863260/pexels-photo-6863260.jpeg?_gl=1*igh9mu*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw">
+  <title>Servicios Contables</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+    }
+
+    /* Contenedor general del contenido */
+    .content-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px 10px;
+    }
+
+    /* Estilos para los bloques de información (simulando los pilares) */
     .info-block {
         margin-bottom: 40px;
+        padding: 0 10px;
     }
 
+    /* Estilo de la imagen de ejemplo (se conserva el estilo de los pilares) */
     .image-example {
       position: relative;
       border-radius: 20px;
@@ -232,7 +283,26 @@
       align-items: flex-end;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    
+
+    .image-example-overlay {
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+    }
+
+    .image-example-overlay h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .image-example-overlay p {
+      font-size: 14px;
+      margin: 5px 0 0;
+    }
+
+    /* Estilo para el texto */
     .info-text {
       max-width: 100%;
       margin: 15px auto;
@@ -240,9 +310,13 @@
       color: #333;
       line-height: 1.6;
       padding: 0 5px;
-      text-align: left;
+    }
+    
+    .info-text p {
+        margin-bottom: 15px;
     }
 
+    /* Estilo para el botón de WhatsApp */
     .whatsapp-button {
       display: block;
       width: 90%;
@@ -260,218 +334,130 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
+    .whatsapp-button:hover {
+      background-color: #1EBE57;
+      transform: translateY(-2px);
+    }
+
+    /* Separador */
     .separator {
       border: none;
       border-top: 2px solid #eee;
       margin: 30px auto;
       width: 90%;
     }
-    
-    .back-btn {
-        display: none;
-        background: none;
-        border: none;
-        color: var(--main-color); /* Color #623F5D aplicado */
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        padding: 10px 20px;
-        margin-top: 15px;
-        width: 100%;
-        text-align: left;
-    }
-    .back-btn i {
-        margin-right: 5px;
-    }
+
   </style>
 </head>
 <body>
-  
-  <div class="top-section-wrapper">
-      <button id="back-to-main" class="back-btn" onclick="hideServices()">
-        <i class="fas fa-arrow-left"></i> Volver a los enlaces
-      </button>
-  </div>
 
-  <div id="main-content">
-    <div class="header">
-      <a href="https://wa.me/573147755480" target="_blank">Pedir Asesoría</a>
-      <button onclick="sharePage()"><i class="fas fa-share-alt"></i> Compartir</button>
-    </div>
+<div class="content-container">
 
-    <div class="container">
-      <div class="profile">
-        <img src="https://i.ibb.co/nNcqyRM5/1759950840980.jpg" alt="Perfil">
-        <div class="profile-name">Jenny Romero</div> <h1>ACONTAYR</h1>
-        <p>¡Tu aliada empresarial! Finanzas simples y claras</p>
-      </div>
-
-      <div class="socials">
-        <a href="https://www.instagram.com/asecontyr" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@yennyromerocontadora?_t=ZS-90Nv55ezvtP&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a> <a href="https://wa.me/573147755480" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-
-      <a class="btn" href="https://www.instagram.com/asecontyr?igsh=MTliYWcxMTFidGJ3Ng==" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a class="btn" href="https://www.tiktok.com/@yennyromerocontadora?_t=ZS-90Nv55ezvtP&_r=1" target="_blank"> <i class="fab fa-tiktok"></i> TikTok
-      </a>
-      <a class="btn" href="https://wa.me/573147755480" target="_blank">
-        <i class="fab fa-whatsapp"></i> WhatsApp
-      </a>
-      <a class="btn" href="javascript:void(0);" onclick="showServices()">
-        <i class="fas fa-globe"></i> Sitio Web
-      </a>
-
-      <div class="video">
-        <div class="instagram-embed-container">
-          <iframe 
-            src="https://www.instagram.com/reel/DPWb8AmDhkE/embed/" 
-            frameborder="0" 
-            scrolling="no" 
-            allowtransparency="true" 
-            allowfullscreen="true">
-          </iframe>
+    <div class="info-block">
+        <div class="image-example" style="background: url('https://images.pexels.com/photos/6863260/pexels-photo-6863260.jpeg?_gl=1*igh9mu*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
+          <div class="image-example-overlay">
+            <h2>Asesoría Contable</h2>
+            <p>La base de su éxito financiero.</p>
+          </div>
         </div>
+
+        <div class="info-text">
+          <p>
+            Proveemos un manejo contable integral, asegurando el cumplimiento de las normativas vigentes. Registramos sus transacciones, elaboramos sus estados financieros y le ofrecemos un análisis preciso para facilitar la toma de decisiones estratégicas de su negocio.
+          </p>
         </div>
-      
-      <div class="footer">
-        © 2025 ACONTAYR - Todos los derechos reservados
-        <a href="mailto:servicios@asesoriatributariayr.com" class="footer-gmail-link">
-            Contactar por Gmail
+        <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Asesor%C3%ADa%20Contable." class="whatsapp-button" target="_blank">
+            Más Información
         </a>
-      </div>
     </div>
+
+    <hr class="separator">
+
+    <div class="info-block">
+        <div class="image-example" style="background: url('https://images.pexels.com/photos/6863384/pexels-photo-6863384.jpeg?_gl=1*1vti2bv*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
+          <div class="image-example-overlay">
+            <h2>Presentación de Exógena</h2>
+            <p>Cumplimiento formal ante la DIAN.</p>
+          </div>
+        </div>
+
+        <div class="info-text">
+          <p>
+            Nos encargamos de la correcta preparación y Presentación de la información Exógena (Medios Magnéticos) a la Dirección de Impuestos y Aduanas Nacionales (DIAN). Garantizamos la exactitud de los datos y el cumplimiento de los plazos para evitar costosas sanciones.
+          </p>
+        </div>
+        <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Presentaci%C3%B3n%20de%20informaci%C3%B3n%20Ex%C3%B3gena." class="whatsapp-button" target="_blank">
+            Más Información
+        </a>
+    </div>
+
+    <hr class="separator">
+
+    <div class="info-block">
+        <div class="image-example" style="background: url('https://images.pexels.com/photos/8927687/pexels-photo-8927687.jpeg?_gl=1*1vti2bv*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
+          <div class="image-example-overlay">
+            <h2>Declaración de Renta</h2>
+            <p>Gestión eficiente de su obligación anual.</p>
+          </div>
+        </div>
+
+        <div class="info-text">
+          <p>
+            Elaboramos y presentamos su Declaración de Renta (personas naturales y jurídicas) optimizando sus deducciones y beneficios fiscales dentro del marco legal. Evite errores y pague lo justo con nuestra asesoría experta.
+          </p>
+        </div>
+        <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Declaraci%C3%B3n%20de%20Renta." class="whatsapp-button" target="_blank">
+            Más Información
+        </a>
+    </div>
+    
+    <hr class="separator">
+    
+    <div class="info-block">
+        <div class="image-example" style="background: url('https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?_gl=1*190810b*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI3NjgkajU5JGwwJGgw') no-repeat center/cover;">
+          <div class="image-example-overlay">
+            <h2>Facturación Electrónica</h2>
+            <p>Modernice y digitalice su negocio.</p>
+          </div>
+        </div>
+
+        <div class="info-text">
+          <p>
+            Le ayudamos a implementar y gestionar la Facturación Electrónica, un requisito obligatorio en Colombia. Asegure la validez legal de sus documentos y mejore la eficiencia en sus procesos de cobro y registro.
+          </p>
+        </div>
+        <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Facturaci%C3%B3n%20Electr%C3%B3nica." class="whatsapp-button" target="_blank">
+            Más Información
+        </a>
+    </div>
+
+    <hr class="separator">
+
+    <div class="info-block">
+        <div class="image-example" style="background: url('https://images.pexels.com/photos/392018/pexels-photo-392018.jpeg?_gl=1*1pw6g9c*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI3NjgkajU5JGwwJGgw') no-repeat center/cover;">
+          <div class="image-example-overlay">
+            <h2>Revisión de Impuestos</h2>
+            <p>Prevenga riesgos y multas.</p>
+          </div>
+        </div>
+
+        <div class="info-text">
+          <p>
+            Realizamos una auditoría de sus obligaciones tributarias pasadas y presentes. Identificamos riesgos, errores y posibles ahorros. Obtenga la tranquilidad de saber que sus declaraciones de impuestos están blindadas contra cualquier requerimiento.
+          </p>
+        </div>
+        <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Revisi%C3%B3n%20de%20Impuestos." class="whatsapp-button" target="_blank">
+            Más Información
+        </a>
+    </div>
+
   </div>
+</body>
+</html>
 
-  <div id="services-section">
-      <div class="content-container-services">
-          
-          <div class="info-block">
-              <div class="image-example" style="background: url('https://images.pexels.com/photos/6863260/pexels-photo-6863260.jpeg?_gl=1*igh9mu*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
-                <div class="image-example-overlay">
-                  <h2>Asesoría Contable</h2>
-                  <p>La base de su éxito financiero.</p>
-                </div>
-              </div>
-
-              <div class="info-text">
-                <p>
-                  Proveemos un manejo contable integral, asegurando el cumplimiento de las normativas vigentes. Registramos sus transacciones, elaboramos sus estados financieros y le ofrecemos un análisis preciso para facilitar la toma de decisiones estratégicas de su negocio.
-                </p>
-              </div>
-              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Asesor%C3%ADa%20Contable." class="whatsapp-button" target="_blank">
-                  Más Información
-              </a>
-          </div>
-
-          <hr class="separator">
-
-          <div class="info-block">
-              <div class="image-example" style="background: url('https://images.pexels.com/photos/6863384/pexels-photo-6863384.jpeg?_gl=1*1vti2bv*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
-                <div class="image-example-overlay">
-                  <h2>Presentación de Exógena</h2>
-                  <p>Cumplimiento formal ante la DIAN.</p>
-                </div>
-              </div>
-
-              <div class="info-text">
-                <p>
-                  Nos encargamos de la correcta preparación y Presentación de la información Exógena (Medios Magnéticos) a la Dirección de Impuestos y Aduanas Nacionales (DIAN). Garantizamos la exactitud de los datos y el cumplimiento de los plazos para evitar costosas sanciones.
-                </p>
-              </div>
-              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Presentaci%C3%B3n%20de%20informaci%C3%B3n%20Ex%C3%B3gena." class="whatsapp-button" target="_blank">
-                  Más Información
-              </a>
-          </div>
-
-          <hr class="separator">
-
-          <div class="info-block">
-              <div class="image-example" style="background: url('https://images.pexels.com/photos/8927687/pexels-photo-8927687.jpeg?_gl=1*1vti2bv*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
-                <div class="image-example-overlay">
-                  <h2>Declaración de Renta</h2>
-                  <p>Gestión eficiente de su obligación anual.</p>
-                </div>
-              </div>
-
-              <div class="info-text">
-                <p>
-                  Elaboramos y presentamos su Declaración de Renta (personas naturales y jurídicas) optimizando sus deducciones y beneficios fiscales dentro del marco legal. Evite errores y pague lo justo con nuestra asesoría experta.
-                </p>
-              </div>
-              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Declaraci%C3%B3n%20de%20Renta." class="whatsapp-button" target="_blank">
-                  Más Información
-              </a>
-          </div>
-          
-          <hr class="separator">
-          
-          <div class="info-block">
-              <div class="image-example" style="background: url('https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?_gl=1*190810b*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI3NjgkajU5JGwwJGgw') no-repeat center/cover;">
-                <div class="image-example-overlay">
-                  <h2>Facturación Electrónica</h2>
-                  <p>Modernice y digitalice su negocio.</p>
-                </div>
-              </div>
-
-              <div class="info-text">
-                <p>
-                  Le ayudamos a implementar y gestionar la Facturación Electrónica, un requisito obligatorio en Colombia. Asegure la validez legal de sus documentos y mejore la eficiencia en sus procesos de cobro y registro.
-                </p>
-              </div>
-              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Facturaci%C3%B3n%20Electr%C3%B3nica." class="whatsapp-button" target="_blank">
-                  Más Información
-              </a>
-          </div>
-
-          <hr class="separator">
-
-          <div class="info-block">
-              <div class="image-example" style="background: url('https://images.pexels.com/photos/392018/pexels-photo-392018.jpeg?_gl=1*1pw6g9c*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI3NjgkajU5JGwwJGgw') no-repeat center/cover;">
-                <div class="image-example-overlay">
-                  <h2>Creación de Empresa y Contabilidad</h2>
-                  <p>Asesoría en inicio y cumplimiento fiscal.</p>
-                </div>
-              </div>
-
-              <div class="info-text">
-                <p>
-                  **Asesoramos en la creación de empresa y la implementación de la contabilidad**. Lleva tu contabilidad al día para **cumplir con las obligaciones fiscales y evitar sanciones**. Nuestro soporte experto garantiza un inicio y operación sin contratiempos legales.
-                </p>
-              </div>
-              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Creaci%C3%B3n%20de%20Empresa%20y%20Contabilidad." class="whatsapp-button" target="_blank">
-                  Más Información
-              </a>
-          </div>
-          
-          <div class="footer" style="text-align: center;">
-            <p>© 2025 ACONTAYR - Servicios</p>
-          </div>
-
-      </div>
   </div>
 
   <script>
-    // **NOTA IMPORTANTE:** El script de TikTok ha sido ELIMINADO ya que se reemplazó el video por uno de Instagram.
-    // Instagram no requiere un script de carga externo si se usa el formato iframe de embed.
-    
-    // Función para mostrar la sección de servicios y ocultar el contenido principal
-    function showServices() {
-      document.getElementById('main-content').style.display = 'none';
-      document.getElementById('services-section').style.display = 'block';
-      document.getElementById('back-to-main').style.display = 'block';
-      window.scrollTo(0, 0); // Opcional: lleva al usuario al inicio de la página
-    }
-
-    // Función para ocultar la sección de servicios y mostrar el contenido principal
-    function hideServices() {
-      document.getElementById('services-section').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
-      document.getElementById('back-to-main').style.display = 'none';
-      window.scrollTo(0, 0); // Opcional: lleva al usuario al inicio de la página
-    }
-
     function sharePage() {
       if (navigator.share) {
         navigator.share({
@@ -481,6 +467,24 @@
         }).catch(console.error);
       } else {
         alert("Tu navegador no soporta la función de compartir.");
+      }
+    }
+
+    function toggleSitioWeb() {
+      const inicio = document.getElementById("inicio");
+      const sitioWeb = document.getElementById("sitio-web");
+      const btnRegresar = document.getElementById("btn-regresar");
+
+      if (sitioWeb.style.display === "none" || sitioWeb.style.display === "") {
+        inicio.style.display = "none";
+        sitioWeb.style.display = "block";
+        btnRegresar.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        sitioWeb.style.display = "none";
+        inicio.style.display = "block";
+        btnRegresar.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     }
   </script>
