@@ -6,6 +6,8 @@
   <title>ACONTAYR</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
@@ -19,7 +21,13 @@
     .container {
       max-width: 500px;
       margin: auto;
-      padding: 20px;
+      padding: 0 20px 20px; /* Reduje el padding superior aquí */
+    }
+    
+    /* CORRECCIÓN #1: Eliminar el espacio superior del botón de volver */
+    .top-section-wrapper {
+        max-width: 500px;
+        margin: auto;
     }
 
     .header {
@@ -27,10 +35,12 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 20px;
+      /* Eliminé el margin-top para que no haya espacio extra */
     }
 
-    .header a, .header button {
-      background: linear-gradient(90deg, #800020, #87CEEB);
+    .header a,
+    .header button {
+      background: #800020; /* color vino sólido */
       color: #fff;
       text-decoration: none;
       font-size: 14px;
@@ -42,7 +52,8 @@
       cursor: pointer;
     }
 
-    .header a:hover, .header button:hover {
+    .header a:hover,
+    .header button:hover {
       opacity: 0.9;
       transform: scale(1.05);
     }
@@ -87,7 +98,7 @@
 
     .btn {
       display: block;
-      background: linear-gradient(90deg, #800020, #87CEEB);
+      background: #800020; /* color vino sólido */
       color: #fff;
       text-decoration: none;
       font-size: 18px;
@@ -109,6 +120,9 @@
 
     .video {
       margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .footer {
@@ -116,55 +130,307 @@
       font-size: 13px;
       opacity: 0.7;
     }
+
+    /* Estilos para la sección de servicios (antes era la segunda página) */
+    #services-section {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 0 20px 0;
+        text-align: left;
+        display: none;
+    }
+
+    .content-container-services {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* CORRECCIÓN #2: Texto de la imagen en blanco */
+    .image-example-overlay {
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white; /* TEXTO EN BLANCO */
+      text-align: left;
+    }
+
+    .image-example-overlay h2 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+      color: white; /* Aseguramos que el h2 sea blanco */
+    }
+
+    .image-example-overlay p {
+      font-size: 14px;
+      margin: 5px 0 0;
+      color: white; /* Aseguramos que el p sea blanco */
+    }
+    
+    /* Otros estilos de servicios */
+    .info-block {
+        margin-bottom: 40px;
+    }
+
+    .image-example {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto 10px auto;
+      height: 200px;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .info-text {
+      max-width: 100%;
+      margin: 15px auto;
+      font-size: 16px;
+      color: #333;
+      line-height: 1.6;
+      padding: 0 5px;
+      text-align: left;
+    }
+
+    .whatsapp-button {
+      display: block;
+      width: 90%;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 12px 20px;
+      background-color: #25D366;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .separator {
+      border: none;
+      border-top: 2px solid #eee;
+      margin: 30px auto;
+      width: 90%;
+    }
+    
+    .back-btn {
+        display: none;
+        background: none;
+        border: none;
+        color: #800020;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 10px 20px;
+        margin-top: 15px; /* Ajuste el margen superior para que no se pegue */
+        width: 100%;
+        text-align: left;
+    }
+    .back-btn i {
+        margin-right: 5px;
+    }
   </style>
 </head>
 <body>
-  <div class="header">
-    <a href="https://wa.me/573147755480" target="_blank">Pedir Asesoría</a>
-    <button onclick="sharePage()"><i class="fas fa-share-alt"></i> Compartir</button>
+  
+  <div class="top-section-wrapper">
+      <button id="back-to-main" class="back-btn" onclick="hideServices()">
+        <i class="fas fa-arrow-left"></i> Volver a los enlaces
+      </button>
   </div>
 
-  <div class="container">
-    <div class="profile">
-      <img src="https://i.ibb.co/BHfJqsfk/1759450646645.png" alt="Perfil">
-      <h1>ACONTAYR</h1>
-      <p>¡Tu aliada empresarial! Finanzas simples y claras</p>
+  <div id="main-content">
+    <div class="header">
+      <a href="https://wa.me/573147755480" target="_blank">Pedir Asesoría</a>
+      <button onclick="sharePage()"><i class="fas fa-share-alt"></i> Compartir</button>
     </div>
 
-    <div class="socials">
-      <a href="https://www.instagram.com/asecontyr" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://wa.me/573147755480" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
+    <div class="container">
+      <div class="profile">
+        <img src="https://i.ibb.co/BHfJqsfk/1759450646645.png" alt="Perfil">
+        <h1>ACONTAYR</h1>
+        <p>¡Tu aliada empresarial! Finanzas simples y claras</p>
+      </div>
 
-    <a class="btn" href="https://www.instagram.com/asecontyr?igsh=MTliYWcxMTFidGJ3Ng==" target="_blank">
-      <i class="fab fa-instagram"></i> Instagram
-    </a>
-    <a class="btn" href="https://www.tiktok.com" target="_blank">
-      <i class="fab fa-tiktok"></i> TikTok
-    </a>
-    <a class="btn" href="https://wa.me/573147755480" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </a>
-    <a class="btn" href="https://asecontyr.com" target="_blank">
-      <i class="fas fa-globe"></i> Sitio Web
-    </a>
+      <div class="socials">
+        <a href="https://www.instagram.com/asecontyr" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/573147755480" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
 
-    <!-- Embed del video de TikTok -->
-    <div class="video">
-  <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yennyromerocontadora/photo/7556670357457915192" 
-    data-video-id="7556670357457915192" style="max-width: 400px; margin: auto;">
-    <section></section>
-  </blockquote>
-</div>
-<script async src="https://www.tiktok.com/embed.js"></script>
-    
-    <div class="footer">
-      © 2025 ACONTAYR - Todos los derechos reservados
+      <a class="btn" href="https://www.instagram.com/asecontyr?igsh=MTliYWcxMTFidGJ3Ng==" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a class="btn" href="https://www.tiktok.com" target="_blank">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+      <a class="btn" href="https://wa.me/573147755480" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a class="btn" href="javascript:void(0);" onclick="showServices()">
+        <i class="fas fa-globe"></i> Sitio Web
+      </a>
+
+      <div class="video">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DPWb8AmDhkE/?igsh=MWk5aXpwNGhzd25pYw==" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+          <div style="padding:16px;"> 
+            <a href="https://www.instagram.com/reel/DPWb8AmDhkE/?igsh=MWk5aXpwNGhzd25pYw==" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> 
+              <div style=" display: flex; flex-direction: row; align-items: center;"> 
+                <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> 
+                <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> 
+                  <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> 
+                  <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                </div>
+              </div>
+              <div style="padding: 19% 0;"></div>
+              <div style="display:block; height:50px; margin:0 auto; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.07,32.146 553.07,34.191 C553.07,36.235 554.814,37.971 556.869,37.971 C558.924,37.971 560.66,36.235 560.66,34.191 C560.66,32.146 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.343 541,39.343 C546.887,39.343 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.19,33.886 524.886,41.191 524.886,50 C524.886,58.81 532.19,66.114 541,66.114 C549.81,66.114 557.114,58.81 557.114,50 C557.114,41.191 549.81,33.886 541,33.886 M565.378,62.101 C565.244,65.047 564.093,66.054 562.101,67.896 C560.057,69.839 557.485,70.65 553.111,71.189 C538.169,72.934 522.696,72.934 507.754,71.189 C503.38,70.65 500.806,69.839 498.763,67.896 C496.77,66.054 495.623,65.047 495.484,62.101 C495.342,59.387 495.109,55.438 495.109,50 C495.109,44.562 495.342,40.613 495.484,37.899 C495.623,34.953 496.77,33.946 498.763,32.104 C500.806,30.161 503.38,29.35 507.754,28.811 C522.696,27.065 538.169,27.065 553.111,28.811 C557.485,29.35 560.057,30.161 562.101,32.104 C564.093,33.946 565.244,34.953 565.378,37.899 C565.52,40.613 565.753,44.562 565.753,50 C565.753,55.438 565.52,59.387 565.378,62.101 M570.82,37.631 C570.674,34.438 569.511,31.516 567.138,29.143 C564.766,26.769 561.846,25.606 558.653,25.464 C543.197,24.759 523.497,24.759 508.038,25.464 C504.846,25.606 499.988,25.968 496.994,27.146 C493.987,28.324 491.739,30.147 490.65,33.109 C489.288,36.529 488.941,40.804 488.941,50 C488.941,59.196 489.288,63.471 490.65,66.891 C491.739,69.853 493.987,71.676 496.994,72.854 C499.988,74.032 504.846,74.394 508.038,74.536 C523.497,75.241 543.197,75.241 558.653,74.536 C561.846,74.394 564.766,74.032 567.138,72.854 C569.511,71.676 570.674,69.853 570.82,66.891 C570.966,63.471 571.314,59.196 571.314,50 C571.314,40.804 570.966,36.529 570.82,37.631"></path></g></g></g></svg></div>
+              <div style="padding-top: 8px;"> 
+                <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver este reel en Instagram</div>
+              </div>
+            </a>
+          </div>
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+      </div>
+      
+      <div class="footer">
+        © 2025 ACONTAYR - Todos los derechos reservados
+      </div>
     </div>
+  </div>
+
+  <div id="services-section">
+      <div class="content-container-services">
+          
+          <div class="info-block">
+              <div class="image-example" style="background: url('https://images.pexels.com/photos/6863260/pexels-photo-6863260.jpeg?_gl=1*igh9mu*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
+                <div class="image-example-overlay">
+                  <h2>Asesoría Contable</h2>
+                  <p>La base de su éxito financiero.</p>
+                </div>
+              </div>
+
+              <div class="info-text">
+                <p>
+                  Proveemos un manejo contable integral, asegurando el cumplimiento de las normativas vigentes. Registramos sus transacciones, elaboramos sus estados financieros y le ofrecemos un análisis preciso para facilitar la toma de decisiones estratégicas de su negocio.
+                </p>
+              </div>
+              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Asesor%C3%ADa%20Contable." class="whatsapp-button" target="_blank">
+                  Más Información
+              </a>
+          </div>
+
+          <hr class="separator">
+
+          <div class="info-block">
+              <div class="image-example" style="background: url('https://images.pexels.com/photos/6863384/pexels-photo-6863384.jpeg?_gl=1*1vti2bv*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
+                <div class="image-example-overlay">
+                  <h2>Presentación de Exógena</h2>
+                  <p>Cumplimiento formal ante la DIAN.</p>
+                </div>
+              </div>
+
+              <div class="info-text">
+                <p>
+                  Nos encargamos de la correcta preparación y Presentación de la información Exógena (Medios Magnéticos) a la Dirección de Impuestos y Aduanas Nacionales (DIAN). Garantizamos la exactitud de los datos y el cumplimiento de los plazos para evitar costosas sanciones.
+                </p>
+              </div>
+              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Presentaci%C3%B3n%20de%20informaci%C3%B3n%20Ex%C3%B3gena." class="whatsapp-button" target="_blank">
+                  Más Información
+              </a>
+          </div>
+
+          <hr class="separator">
+
+          <div class="info-block">
+              <div class="image-example" style="background: url('https://images.pexels.com/photos/8927687/pexels-photo-8927687.jpeg?_gl=1*1vti2bv*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI2MDMkajMzJGwwJGgw') no-repeat center/cover;">
+                <div class="image-example-overlay">
+                  <h2>Declaración de Renta</h2>
+                  <p>Gestión eficiente de su obligación anual.</p>
+                </div>
+              </div>
+
+              <div class="info-text">
+                <p>
+                  Elaboramos y presentamos su Declaración de Renta (personas naturales y jurídicas) optimizando sus deducciones y beneficios fiscales dentro del marco legal. Evite errores y pague lo justo con nuestra asesoría experta.
+                </p>
+              </div>
+              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Declaraci%C3%B3n%20de%20Renta." class="whatsapp-button" target="_blank">
+                  Más Información
+              </a>
+          </div>
+          
+          <hr class="separator">
+          
+          <div class="info-block">
+              <div class="image-example" style="background: url('https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?_gl=1*190810b*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI3NjgkajU5JGwwJGgw') no-repeat center/cover;">
+                <div class="image-example-overlay">
+                  <h2>Facturación Electrónica</h2>
+                  <p>Modernice y digitalice su negocio.</p>
+                </div>
+              </div>
+
+              <div class="info-text">
+                <p>
+                  Le ayudamos a implementar y gestionar la Facturación Electrónica, un requisito obligatorio en Colombia. Asegure la validez legal de sus documentos y mejore la eficiencia en sus procesos de cobro y registro.
+                </p>
+              </div>
+              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Facturaci%C3%B3n%20Electr%C3%B3nica." class="whatsapp-button" target="_blank">
+                  Más Información
+              </a>
+          </div>
+
+          <hr class="separator">
+
+          <div class="info-block">
+              <div class="image-example" style="background: url('https://images.pexels.com/photos/392018/pexels-photo-392018.jpeg?_gl=1*1pw6g9c*_ga*MTY1Njc0OTExMi4xNzU2OTU5ODI1*_ga_8JE65Q40S6*czE3NTk5NDI1NzYkbzMkZzEkdDE3NTk5NDI3NjgkajU5JGwwJGgw') no-repeat center/cover;">
+                <div class="image-example-overlay">
+                  <h2>Creación de Empresa y Contabilidad</h2>
+                  <p>Asesoría en inicio y cumplimiento fiscal.</p>
+                </div>
+              </div>
+
+              <div class="info-text">
+                <p>
+                  **Asesoramos en la creación de empresa y la implementación de la contabilidad**. Lleva tu contabilidad al día para **cumplir con las obligaciones fiscales y evitar sanciones**. Nuestro soporte experto garantiza un inicio y operación sin contratiempos legales.
+                </p>
+              </div>
+              <a href="https://wa.me/573147755480?text=Hola,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Creaci%C3%B3n%20de%20Empresa%20y%20Contabilidad." class="whatsapp-button" target="_blank">
+                  Más Información
+              </a>
+          </div>
+          
+          <div class="footer" style="text-align: center;">
+            <p>© 2025 ACONTAYR - Servicios</p>
+          </div>
+
+      </div>
   </div>
 
   <script>
+    // Función para mostrar la sección de servicios y ocultar el contenido principal
+    function showServices() {
+      document.getElementById('main-content').style.display = 'none';
+      document.getElementById('services-section').style.display = 'block';
+      document.getElementById('back-to-main').style.display = 'block';
+      window.scrollTo(0, 0); // Opcional: lleva al usuario al inicio de la página
+    }
+
+    // Función para ocultar la sección de servicios y mostrar el contenido principal
+    function hideServices() {
+      document.getElementById('services-section').style.display = 'none';
+      document.getElementById('main-content').style.display = 'block';
+      document.getElementById('back-to-main').style.display = 'none';
+      window.scrollTo(0, 0); // Opcional: lleva al usuario al inicio de la página
+    }
+
     function sharePage() {
       if (navigator.share) {
         navigator.share({
