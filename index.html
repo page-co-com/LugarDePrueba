@@ -137,12 +137,28 @@
       justify-content: center;
       align-items: center;
       padding-bottom: 20px; /* Agrego un poco de espacio abajo del video */
+      /* Contenedor del video para manejar el iframe de Instagram */
+      max-width: 100%; /* Asegura que no desborde */
+      overflow: hidden; /* Oculta partes que puedan salirse */
     }
     
-    /* Estilo para el contenedor del video de TikTok */
-    .tiktok-embed {
-        margin: 0 auto;
+    /* Estilo para el contenedor del video de Instagram Reel */
+    .instagram-embed-container {
+      position: relative;
+      /* Ajustar el tamaño del iframe de Instagram */
+      width: 100%; 
+      max-width: 450px; /* Ancho máximo para el embed de Instagram */
+      margin: 0 auto;
     }
+
+    /* Estilos para el iframe de Instagram */
+    .instagram-embed-container iframe {
+      width: 100%;
+      height: 600px; /* Altura adecuada para un Reel/Post incrustado */
+      border: 0;
+      max-width: 100%;
+    }
+
 
     .footer {
       margin-top: 30px;
@@ -308,14 +324,16 @@
       </a>
 
       <div class="video">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yennyromerocontadora/video/7557002962543971596" data-video-id="7557002962543971596" style="max-width: 500px; min-width: 325px;" > 
-            <section>
-                <a target="_blank" title="@yennyromerocontadora" href="https://www.tiktok.com/@yennyromerocontadora?_t=ZS-90NwFJ5dO0w&_r=1">@yennyromerocontadora</a>
-
-                <a target="_blank" title="♬ sonido original - YENNY ROMERO CONTADORA" href="https://www.tiktok.com/music/sonido-original-7357002598341604130?_r=1&is_from_webapp=v1&item_id=7557002962543971596">♬ sonido original - YENNY ROMERO CONTADORA</a>
-            </section>
-        </blockquote>
-      </div>
+        <div class="instagram-embed-container">
+          <iframe 
+            src="https://www.instagram.com/reel/DPWb8AmDhkE/embed/" 
+            frameborder="0" 
+            scrolling="no" 
+            allowtransparency="true" 
+            allowfullscreen="true">
+          </iframe>
+        </div>
+        </div>
       
       <div class="footer">
         © 2025 ACONTAYR - Todos los derechos reservados
@@ -435,14 +453,8 @@
   </div>
 
   <script>
-    // Script para cargar el embed de TikTok
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://www.tiktok.com/embed.js";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'tiktok-embed'));
+    // **NOTA IMPORTANTE:** El script de TikTok ha sido ELIMINADO ya que se reemplazó el video por uno de Instagram.
+    // Instagram no requiere un script de carga externo si se usa el formato iframe de embed.
     
     // Función para mostrar la sección de servicios y ocultar el contenido principal
     function showServices() {
